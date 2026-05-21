@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Struvia | Fast-install Exterior Systems for Modern Residential Construction</title>
+    <title>Struvia | Exterior Construction Operating System for Modern Buildability</title>
     <meta
       name="description"
       content="Struvia is a buildability-focused exterior systems brand for residential, commercial, and industrial construction, with fast-install exterior workflows for multiple building types."
@@ -49,7 +49,7 @@
       img {
         display: block;
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover;
         object-position: center center;
       }
@@ -262,7 +262,8 @@
       }
 
       .hero-media {
-        min-height: 560px;
+        height: clamp(520px, 56vw, 680px);
+        aspect-ratio: 5 / 4;
         position: relative;
         overflow: hidden;
         border: 1px solid var(--line);
@@ -271,7 +272,9 @@
 
       .hero-media figure,
       .image-card,
+      .system-feature,
       .application-card figure,
+      .install-visual,
       .install-visual figure {
         margin: 0;
         overflow: hidden;
@@ -279,10 +282,13 @@
       }
 
       .hero-media figure {
+        width: 100%;
         height: 100%;
       }
 
       .hero-media img {
+        width: 100%;
+        height: 100%;
         object-position: center 54%;
       }
 
@@ -317,8 +323,7 @@
         color: var(--muted);
       }
 
-      .dark .section-heading p,
-      .dark .install-step p {
+      .dark .section-heading p {
         color: #c7d0cc;
       }
 
@@ -363,9 +368,18 @@
 
       .system-feature {
         aspect-ratio: 5 / 4;
+        width: 100%;
         min-height: 0;
         position: relative;
         overflow: hidden;
+      }
+
+      .system-feature img,
+      .install-visual img,
+      .system-row img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .system-feature img,
@@ -388,8 +402,10 @@
 
       .system-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: 1fr;
         gap: 18px;
+        align-items: stretch;
         border: 1px solid var(--line);
         background: transparent;
       }
@@ -397,6 +413,8 @@
       .system-row {
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        height: 100%;
         min-height: 0;
         background: var(--white);
         border: 1px solid var(--line);
@@ -405,6 +423,7 @@
       .system-row figure {
         margin: 0;
         aspect-ratio: 4 / 3;
+        width: 100%;
         overflow: hidden;
       }
 
@@ -426,27 +445,28 @@
 
       .install-visual {
         position: relative;
-        min-height: 420px;
+        aspect-ratio: 5 / 4;
+        min-height: 0;
         overflow: hidden;
       }
 
       .install-steps {
         display: grid;
         gap: 1px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid var(--line);
+        background: var(--line);
       }
 
       .install-step {
         min-height: 104px;
         padding: 22px;
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--white);
       }
 
       .install-step strong {
         display: block;
         margin-bottom: 7px;
-        color: #d8e0dc;
+        color: var(--green);
         font-size: 12px;
         text-transform: uppercase;
       }
@@ -454,7 +474,9 @@
       .application-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 1fr;
         gap: 18px;
+        align-items: stretch;
       }
 
       .application-group {
@@ -488,6 +510,7 @@
 
       .application-card {
         min-height: 0;
+        height: 100%;
         display: flex;
         flex-direction: column;
         background: var(--white);
@@ -504,10 +527,16 @@
 
       .application-card figure {
         aspect-ratio: 4 / 3;
+        width: 100%;
+        flex: 0 0 auto;
         height: auto;
       }
 
       .application-card img {
+        aspect-ratio: 4 / 3;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
         object-position: center 56%;
       }
 
@@ -532,10 +561,20 @@
       }
 
       .application-card .card {
+        display: flex;
+        flex-direction: column;
         flex: 1;
         border: 0;
         padding: 22px;
         min-height: 156px;
+      }
+
+      .application-card .card h3 {
+        margin-bottom: 10px;
+      }
+
+      .application-card .card p {
+        margin-top: auto;
       }
 
       .about-panel {
@@ -814,11 +853,13 @@
           <span></span><span></span>
         </button>
         <nav class="nav" aria-label="Primary navigation">
-          <a href="#systems">Systems</a>
-          <a href="#applications">Applications</a>
           <a href="#buildability">Buildability</a>
+          <a href="#systems">Systems</a>
           <a href="#installation">Installation</a>
           <a href="#structure">Structure</a>
+          <a href="technical-center/">Technical Center</a>
+          <a href="#applications">Applications</a>
+          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -828,215 +869,162 @@
       <section class="hero">
         <div class="wrap hero-grid">
           <div>
-            <p class="eyebrow">Struvia Exterior Construction Systems</p>
-            <h1>Making buildings easier to build.</h1>
+            <p class="eyebrow">A Manifesto for Industrialized Exterior Construction</p>
+            <h1>Outdated exterior workflows cannot carry modern construction.</h1>
             <p class="hero-copy">
-              Fast-install exterior systems for residential, commercial, and industrial
-              buildings that need cleaner facade execution and scalable construction workflows.
+              Struvia exists to move exterior construction away from labor-heavy site improvisation
+              and toward installation-first systems: dry, repeatable, predictable, scalable facade
+              workflows for modern building execution.
             </p>
             <div class="actions">
-              <a class="button" href="#applications">Explore Applications</a>
+              <a class="button" href="#systems">Explore Systems</a>
               <a class="button secondary" href="#contact">Get Project Support</a>
             </div>
             <div class="hero-proof" aria-label="Struvia homepage priorities">
-              <div class="proof-item"><strong>01</strong><span>Reduce exterior construction complexity</span></div>
-              <div class="proof-item"><strong>02</strong><span>Support modular-friendly project workflows</span></div>
-              <div class="proof-item"><strong>03</strong><span>Build modern facades with real project logic</span></div>
+              <div class="proof-item"><strong>01</strong><span>Replace fragmented wet workflows with dry exterior logic</span></div>
+              <div class="proof-item"><strong>02</strong><span>Control alignment, fixing, finishing, and inspection</span></div>
+              <div class="proof-item"><strong>03</strong><span>Scale facade execution beyond project-by-project improvisation</span></div>
             </div>
           </div>
-          <div class="hero-media" aria-label="Real residential exterior applications">
+          <div class="hero-media" aria-label="Modern exterior construction system application">
             <figure class="hero-main">
-              <img src="assets/applications/residential/resort-houses/timber-resort-villa-glazed-facade.jpg" alt="timber resort villa with large glazed facade and architectural exterior system" />
+              <img src="assets/applications/industrial/factories/factory-building-installation-metal-cladding.jpg" alt="factory building exterior metal cladding installation workflow" />
             </figure>
             <div class="media-caption">
-              A real facade-led residential scene sets the tone: architectural, buildable, and grounded in exterior systems.
+              Exterior systems are not decoration. They are construction infrastructure for sequencing, alignment, inspection, and delivery under pressure.
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section soft" id="systems">
+      <section class="section soft" id="problem">
         <div class="wrap">
           <div class="section-heading">
-            <h2>Fast-install exterior systems for real buildings.</h2>
+            <h2>Traditional exterior construction is becoming unsustainable.</h2>
             <p>
-              Struvia metal siding panels are positioned as exterior construction efficiency systems:
-              lightweight, insulated, modular-friendly, and designed for modern facades across
-              residential, commercial, and industrial building types.
-            </p>
-          </div>
-          <div class="systems-showcase">
-            <figure class="system-feature">
-              <img src="assets/applications/commercial/office-buildings/office-building-exterior-modern-white.jpg" alt="modern office building with white exterior metal siding system" />
-              <figcaption class="overlay">
-                <h3>One exterior system logic, multiple building scales.</h3>
-                <p>Residential homes, offices, retail facades, workshops, warehouses, and agricultural buildings can all communicate modern appearance through organized exterior systems.</p>
-              </figcaption>
-            </figure>
-            <div class="system-list">
-              <article class="system-row">
-                <figure><img src="assets/applications/residential/resort-houses/timber-resort-villa-glazed-facade.jpg" alt="timber resort villa with glazed facade and wood grain exterior system" /></figure>
-                <div><h3>Residential Facade Systems</h3><p>Warm architectural surfaces for prefab houses, resort houses, and compact modern homes.</p></div>
-              </article>
-              <article class="system-row">
-                <figure><img src="assets/applications/commercial/retail-stores/retail-storefront-modern-cladding.jpg" alt="retail storefront with modern exterior cladding system" /></figure>
-                <div><h3>Commercial Facade Systems</h3><p>Clean storefront and office exteriors for brand-facing commercial buildings.</p></div>
-              </article>
-              <article class="system-row">
-                <figure><img src="assets/applications/industrial/warehouses/warehouse-building-metal-cladding-white.jpg" alt="warehouse building with white metal cladding exterior system" /></figure>
-                <div><h3>Large-scale Exterior Systems</h3><p>Repeatable panel logic for warehouses, factories, workshops, and scalable wall areas.</p></div>
-              </article>
-              <article class="system-row">
-                <figure><img src="assets/applications/residential/prefab-houses/yellow-prefab-house-panel-installation.jpg" alt="prefab house exterior panel installation workflow" /></figure>
-                <div><h3>Cladding Installation Support</h3><p>Exterior surfaces and installation workflow are planned together for cleaner execution.</p></div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="applications">
-        <div class="wrap">
-          <div class="section-heading">
-            <h2>Exterior systems for multiple building types.</h2>
-            <p>
-              Residential remains the primary application category, supported by commercial and
-              industrial scenes that show Struvia as a scalable exterior system platform.
-            </p>
-          </div>
-          <div class="application-group">
-            <div class="application-group-title">
-              <h3>Residential Applications</h3>
-              <p>Primary use cases for modern homes, scalable housing, and architectural residential exteriors.</p>
-            </div>
-            <div class="application-grid">
-              <article class="application-card feature">
-                <figure><img src="assets/applications/residential/prefab-houses/two-story-modular-prefab-house.jpg" alt="two story modular prefab house with wood grain exterior system" /></figure>
-                <div class="card"><h3>Prefab Houses</h3><p>Repeatable exterior workflows for scalable residential construction.</p></div>
-              </article>
-              <article class="application-card feature">
-                <figure><img src="assets/applications/residential/modular-homes/modular-home-exterior-white-facade.jpg" alt="modular home with white exterior facade system" /></figure>
-                <div class="card"><h3>Modular Homes</h3><p>Factory-friendly exterior logic for consistent site assembly.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/residential/resort-houses/modern-resort-villa-lawn-facade.jpg" alt="modern resort villa with clear residential facade and lawn setting" /></figure>
-                <div class="card"><h3>Resort Houses</h3><p>Atmospheric facade systems for hospitality-style residential environments.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/residential/standard-houses/suburban-family-house-front-facade.jpg" alt="suburban family house front facade with exterior cladding" /></figure>
-                <div class="card"><h3>Standard Houses</h3><p>Modern exterior upgrades for everyday urban and suburban homes.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/residential/tiny-houses/compact-home-countryside-glass-facade.jpg" alt="compact tiny home with countryside glass facade" /></figure>
-                <div class="card"><h3>Tiny Houses</h3><p>Lightweight exterior systems for compact and efficient living spaces.</p></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="application-group">
-            <div class="application-group-title">
-              <h3>Commercial Applications</h3>
-              <p>Exterior systems for customer-facing facades, office envelopes, and commercial renovation.</p>
-            </div>
-            <div class="application-grid">
-              <article class="application-card feature">
-                <figure><img src="assets/applications/commercial/office-buildings/office-facade-metal-siding-white-system.jpg" alt="office building facade with white metal siding exterior system" /></figure>
-                <div class="card"><h3>Office Buildings</h3><p>Clean modern envelopes for scalable commercial exterior execution.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/commercial/retail-stores/retail-store-exterior-modern-facade.jpg" alt="retail store exterior with modern facade system" /></figure>
-                <div class="card"><h3>Retail Stores</h3><p>Brand-facing storefront cladding with fast-install exterior logic.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/commercial/restaurants-cafes/restaurant-cafe-modern-metal-facade.jfif" alt="restaurant cafe exterior with modern metal facade system" /></figure>
-                <div class="card"><h3>Restaurants & Cafes</h3><p>Atmospheric commercial facades for food-service and hospitality streetscapes.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/commercial/shopping-centers/shopping-center-facade-modern-exterior.jpg" alt="shopping center facade with modern exterior cladding system" /></figure>
-                <div class="card"><h3>Shopping Centers</h3><p>Large commercial facade areas with consistent modern exterior rhythm.</p></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="application-group">
-            <div class="application-group-title">
-              <h3>Industrial Applications</h3>
-              <p>Durable, repeatable exterior systems for large-scale and utility-driven building envelopes.</p>
-            </div>
-            <div class="application-grid">
-              <article class="application-card compact">
-                <figure><img src="assets/applications/industrial/factories/factory-exterior-metal-siding-white-blue.jpg" alt="factory exterior with white and blue metal siding system" /></figure>
-                <div class="card"><h3>Factories</h3><p>Durable exterior systems for scalable production buildings.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/industrial/workshops/workshop-exterior-white-metal-siding.JPG" alt="workshop exterior with white metal siding system" /></figure>
-                <div class="card"><h3>Workshops</h3><p>Practical exterior panels for efficient workshop envelopes.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/industrial/warehouses/warehouse-exterior-large-scale-panels.jpg" alt="warehouse exterior with large scale metal panel system" /></figure>
-                <div class="card"><h3>Warehouses</h3><p>Repeatable cladding logic for large wall areas and logistics buildings.</p></div>
-              </article>
-              <article class="application-card compact">
-                <figure><img src="assets/applications/industrial/poultry-houses/poultry-house-building-white-facade.jpg" alt="poultry house building with white exterior facade system" /></figure>
-                <div class="card"><h3>Poultry Houses</h3><p>Exterior systems for agricultural buildings needing durability and simplified maintenance.</p></div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section soft" id="buildability">
-        <div class="wrap">
-          <div class="section-heading">
-            <h2>Buildability means making exterior construction easier to execute.</h2>
-            <p>
-              Struvia connects architectural appearance with installation simplicity,
-              labor reduction, modular compatibility, and scalable workflows across multiple building types.
+              The conflict is simple: modern projects need speed, predictability, and scalable facade
+              quality, while traditional exterior methods still depend on fragmented trades, wet
+              sequencing, weather-sensitive work, manual coordination, and inconsistent site execution.
             </p>
           </div>
           <div class="buildability-grid">
             <article class="card">
-              <h3>Reduce complexity</h3>
-              <p>Exterior appearance, insulation, and installation workflow are planned as one system.</p>
+              <h3>Schedule pressure</h3>
+              <p>Traditional facade work stretches delivery because substrate preparation, wall finish, fixing, and edge treatment move through disconnected site stages.</p>
             </article>
             <article class="card">
-              <h3>Support repeatability</h3>
-              <p>Panel logic helps prefab and modular teams repeat cleaner facade execution.</p>
+              <h3>Labor dependency</h3>
+              <p>Exterior quality still depends too heavily on skilled manual coordination, making speed, alignment, and repeatability harder to protect.</p>
             </article>
             <article class="card">
-              <h3>Lower labor pressure</h3>
-              <p>Simpler handling and connection logic reduce coordination burden on site.</p>
+              <h3>Weather dependency</h3>
+              <p>Wet or layered exterior workflows are vulnerable to weather windows, site interruption, and inconsistent production rhythm.</p>
             </article>
             <article class="card">
-              <h3>Protect design quality</h3>
-              <p>Modern exterior systems improve buildability without losing architectural calm.</p>
+              <h3>Execution fragmentation</h3>
+              <p>When facade appearance, insulation, panel layout, accessories, fixing, and edge details are disconnected, exterior work loses system control.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section dark" id="installation">
+      <section class="section" id="buildability">
         <div class="wrap">
           <div class="section-heading">
-            <h2>Installation logic designed for repeatable exterior workflows.</h2>
+            <h2>Buildability is the counter-position.</h2>
             <p>
-              The integrated interlocking metal panel workflow supports organized layout,
-              repeatable alignment, faster exterior execution, and cleaner finishing details.
+              Buildability is Struvia’s answer to the conflict. It means exterior construction should
+              become easier to plan, easier to install, easier to inspect, and easier to scale.
+              Installation-first systems are not an option for the future; they are the direction
+              modern construction is being forced to take.
+            </p>
+          </div>
+          <div class="buildability-grid">
+            <article class="card">
+              <h3>Installation-first systems</h3>
+              <p>Exterior design is connected to material handling, panel layout, fixing sequence, connection logic, and finishing from the start.</p>
+            </article>
+            <article class="card">
+              <h3>Dry construction methodology</h3>
+              <p>Organized panel systems reduce dependence on weather-sensitive wet facade processes and complex site sequencing.</p>
+            </article>
+            <article class="card">
+              <h3>Repeatable facade workflows</h3>
+              <p>The same exterior method can support prefab housing, commercial envelopes, and large industrial wall areas.</p>
+            </article>
+            <article class="card">
+              <h3>Scalable execution control</h3>
+              <p>Cleaner alignment and integrated finishing logic help project teams reduce rework and protect facade consistency.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="systems">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Fast-install systems turn conflict into execution method.</h2>
+            <p>
+              Struvia metal siding panels are presented as exterior construction efficiency systems:
+              lightweight, insulated, modular-friendly, and organized around workflow logic instead
+              of decorative surface display. The system should reduce uncertainty: what starts first,
+              what sets the line, what fixes the wall, and what verifies the result.
+            </p>
+          </div>
+          <div class="systems-showcase">
+            <figure class="system-feature">
+              <img src="assets/applications/commercial/office-buildings/office-exterior-installation-white-panels.jpg" alt="office exterior installation with white metal panels and facade alignment" />
+              <figcaption class="overlay">
+                <h3>Facade execution needs system control.</h3>
+                <p>Panel preparation, fixing, alignment, trims, finishing, and inspection are treated as one repeatable exterior workflow, not separate site decisions.</p>
+              </figcaption>
+            </figure>
+            <div class="system-list">
+              <article class="system-row">
+                <div><h3>01 / Prepare</h3><p>Reduce site uncertainty before facade work begins through controlled panel handling and compatible accessories.</p></div>
+              </article>
+              <article class="system-row">
+                <div><h3>02 / Align</h3><p>Panel rhythm, starter trims, and layout positioning create a repeatable installation baseline.</p></div>
+              </article>
+              <article class="system-row">
+                <div><h3>03 / Fix</h3><p>Simplified fixing and integrated interlocking logic reduce dependence on improvised site coordination.</p></div>
+              </article>
+              <article class="system-row">
+                <div><h3>04 / Finish</h3><p>Edge trims and connection details turn wall areas into controlled exterior infrastructure.</p></div>
+              </article>
+              <article class="system-row">
+                <div><h3>05 / Inspect</h3><p>Final alignment checks make exterior quality easier to verify, repeat, and scale under project pressure.</p></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="installation">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Installation workflow is where outdated methods are replaced.</h2>
+            <p>
+              The integrated interlocking metal panel workflow supports organized preparation,
+              layout positioning, simplified fixing, repeatable alignment, cleaner finishing details,
+              and final inspection discipline. The goal is a facade process that crews can understand,
+              repeat, and control instead of re-solving the wall on every site.
             </p>
           </div>
           <div class="install-grid">
             <figure class="install-visual">
-              <img src="assets/applications/residential/prefab-houses/yellow-prefab-house-panel-installation.jpg" alt="prefab house exterior panel installation in progress" />
+              <img src="assets/applications/industrial/workshops/workshop-installation-metal-assembly.JPG" alt="industrial workshop metal exterior panel assembly and installation workflow" />
               <figcaption class="overlay">
-                <h3>Fast-install exterior workflow</h3>
-                <p>Panel preparation, alignment, fixing, connection, and finishing are treated as one buildability system.</p>
+                <h3>Installation-first exterior execution</h3>
+                <p>Panel handling, alignment, fixing, connection, finishing, and inspection become one buildability system.</p>
               </figcaption>
             </figure>
             <div class="install-steps">
               <article class="install-step"><strong>01 / Prepare</strong><h3>Wall surface preparation</h3><p>Stable substrates reduce later installation complexity.</p></article>
-              <article class="install-step"><strong>02 / Align</strong><h3>Measuring and layout</h3><p>Clear positioning improves facade rhythm and consistency.</p></article>
-              <article class="install-step"><strong>03 / Connect</strong><h3>Interlocking panel installation</h3><p>Integrated connection logic simplifies exterior assembly.</p></article>
-              <article class="install-step"><strong>04 / Finish</strong><h3>Corner and edge trims</h3><p>Accessory systems create clean transitions and finished edges.</p></article>
+              <article class="install-step"><strong>02 / Set Out</strong><h3>Measuring and layout control</h3><p>Clear positioning improves panel rhythm and reduces rework.</p></article>
+              <article class="install-step"><strong>03 / Fix</strong><h3>Simplified panel fixing</h3><p>Organized fixing logic makes exterior work easier to manage.</p></article>
+              <article class="install-step"><strong>04 / Connect</strong><h3>Interlocking panel connection</h3><p>Integrated connection logic supports faster exterior assembly.</p></article>
+              <article class="install-step"><strong>05 / Inspect</strong><h3>Finishing and alignment check</h3><p>Accessory systems and final inspection create controlled transitions and finished edges.</p></article>
             </div>
           </div>
         </div>
@@ -1045,28 +1033,137 @@
       <section class="section" id="structure">
         <div class="wrap">
           <div class="section-heading">
-            <h2>Structure system: exterior appearance, insulation, and installation in one workflow.</h2>
+            <h2>System structure turns facade work into controlled execution.</h2>
             <p>
               The product structure is presented as a complete exterior construction system,
-              not isolated decorative material or a commodity wall panel.
+              not isolated decorative material or a commodity wall panel. Each layer has a role in
+              exterior performance, handling, dry installation, and facade control, so the wall can
+              be executed as infrastructure rather than assembled through fragmented decisions.
             </p>
           </div>
           <div class="buildability-grid">
             <article class="card">
               <h3>Surface coated metal layer</h3>
-              <p>Provides architectural finish, weather resistance, corrosion resistance, and exterior color stability.</p>
+              <p>Creates the architectural weather skin while supporting corrosion resistance, color stability, and exterior durability.</p>
             </article>
             <article class="card">
               <h3>Rigid PU insulated core</h3>
-              <p>Supports thermal efficiency, lightweight handling, and integrated exterior performance.</p>
+              <p>Supports thermal efficiency, panel stability, lightweight handling, and faster exterior workflow.</p>
             </article>
             <article class="card">
               <h3>Back protective layer</h3>
-              <p>Improves moisture resistance, system stability, and long-term exterior protection.</p>
+              <p>Improves moisture resistance, backing stability, and system protection behind the exterior surface.</p>
             </article>
             <article class="card">
               <h3>Integrated interlocking system</h3>
-              <p>Simplifies alignment, connection, edge finishing, and repeatable project execution.</p>
+              <p>Supports alignment control, panel connection, edge finishing, and repeatable project execution.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="applications">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Scalable facade workflows must cross building types.</h2>
+            <p>
+              The conflict is not limited to one market. Housing, commercial facades, and industrial
+              envelopes all face exterior execution pressure. The building changes; the need for
+              predictable, labor-efficient facade workflow does not.
+            </p>
+          </div>
+          <div class="application-group">
+            <div class="application-group-title">
+              <h3>Residential Execution</h3>
+              <p>Prefab, modular, and standard homes where exterior speed, dry workflow, and consistency affect delivery.</p>
+            </div>
+            <div class="application-grid">
+              <article class="application-card feature">
+                <figure><img src="assets/applications/residential/prefab-houses/yellow-modular-prefab-house-assembly.jpg" alt="modular prefab house assembly with exterior system workflow" /></figure>
+                <div class="card"><h3>Prefab Houses</h3><p>Repeatable exterior workflows for scalable residential construction and faster site completion.</p></div>
+              </article>
+              <article class="application-card feature">
+                <figure><img src="assets/applications/residential/modular-homes/modular-house-installation-system.jpg" alt="modular home exterior installation system and panel workflow" /></figure>
+                <div class="card"><h3>Modular Homes</h3><p>Factory-friendly exterior logic for consistent alignment, handling, and site assembly.</p></div>
+              </article>
+              <article class="application-card compact">
+                <figure><img src="assets/applications/residential/renovation/renovation-facade-modern-installation.jpg" alt="residential facade modernization with exterior installation workflow" /></figure>
+                <div class="card"><h3>Standard Houses</h3><p>Modern exterior upgrades for everyday homes where simplified facade execution reduces disruption.</p></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="application-group">
+            <div class="application-group-title">
+              <h3>Commercial Execution</h3>
+              <p>Office, retail, and food-service facades where clean exterior rhythm, fast turnover, and predictable site work matter.</p>
+            </div>
+            <div class="application-grid">
+              <article class="application-card feature">
+                <figure><img src="assets/applications/commercial/office-buildings/office-exterior-installation-white-panels.jpg" alt="office exterior installation with white metal panels" /></figure>
+                <div class="card"><h3>Office Buildings</h3><p>Commercial envelopes that need scalable exterior execution, alignment control, and fast delivery.</p></div>
+              </article>
+              <article class="application-card compact">
+                <figure><img src="assets/applications/commercial/retail-stores/retail-exterior-metal-installation.jpg" alt="retail exterior metal panel installation workflow" /></figure>
+                <div class="card"><h3>Retail Stores</h3><p>Brand-facing storefront cladding with fast-install exterior logic and less site disruption.</p></div>
+              </article>
+              <article class="application-card compact">
+                <figure><img src="assets/applications/commercial/restaurants-cafes/restaurant-cafe-building-cladding-installation.png" alt="restaurant cafe building exterior cladding installation" /></figure>
+                <div class="card"><h3>Restaurants & Cafes</h3><p>Architectural commercial facades with efficient exterior upgrading and brand-facing texture.</p></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="application-group">
+            <div class="application-group-title">
+              <h3>Industrial Execution</h3>
+              <p>Large wall areas where repeatable alignment, durability, simplified maintenance, and industrial rhythm matter.</p>
+            </div>
+            <div class="application-grid">
+              <article class="application-card compact">
+                <figure><img src="assets/applications/industrial/factories/factory-building-installation-metal-cladding.jpg" alt="factory building installation with metal exterior cladding" /></figure>
+                <div class="card"><h3>Factories</h3><p>Durable exterior systems for scalable production buildings and large wall-area execution.</p></div>
+              </article>
+              <article class="application-card compact">
+                <figure><img src="assets/applications/industrial/workshops/workshop-installation-metal-assembly.JPG" alt="workshop metal exterior panel assembly workflow" /></figure>
+                <div class="card"><h3>Workshops</h3><p>Practical exterior panels for efficient workshop envelopes.</p></div>
+              </article>
+              <article class="application-card compact">
+                <figure><img src="assets/applications/industrial/warehouses/warehouse-exterior-large-scale-panels.jpg" alt="warehouse exterior with large scale metal panel system" /></figure>
+                <div class="card"><h3>Warehouses</h3><p>Repeatable cladding logic for large wall areas, logistics buildings, and fast envelope closure.</p></div>
+              </article>
+              <article class="application-card compact">
+                <figure><img src="assets/applications/industrial/poultry-houses/poultry-house-installation-metal-panels.JPG" alt="poultry house metal panel installation for agricultural exterior system" /></figure>
+                <div class="card"><h3>Poultry Houses</h3><p>Exterior systems for agricultural buildings needing durability and simplified maintenance.</p></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft" id="projects">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Engineering trust comes from resisting outdated workflow logic.</h2>
+            <p>
+              Struvia should be evaluated through how clearly the system reduces exterior
+              coordination, supports installation control, and scales across real project conditions.
+              The strongest proof is a workflow that can be repeated under pressure, across crews,
+              climates, and building types.
+            </p>
+          </div>
+          <div class="reason-grid">
+            <article class="card">
+              <h3>Workflow credibility</h3>
+              <p>The system is explained through preparation, set-out, alignment, fixing, interlocking connection, edge finishing, and inspection logic.</p>
+            </article>
+            <article class="card">
+              <h3>Industrialized repeatability</h3>
+              <p>The same exterior methodology can support prefab housing, commercial envelopes, factories, workshops, warehouses, and poultry houses.</p>
+            </article>
+            <article class="card">
+              <h3>Reduced execution risk</h3>
+              <p>Builders, developers, prefab manufacturers, and project owners need lower exterior complexity, better predictability, and faster delivery.</p>
             </article>
           </div>
         </div>
@@ -1075,10 +1172,11 @@
       <section class="section" id="contact">
         <div class="wrap cta-panel">
           <div>
-            <h2>Build faster. Reduce complexity. Improve buildability.</h2>
+            <h2>Outdated exterior workflows should not define the next generation of construction.</h2>
             <p>
-              Share your building type, exterior style, climate, and installation needs.
-              Struvia can help you evaluate the right fast-install exterior system for your project.
+              Share your building type, exterior workflow, climate, and installation needs.
+              Struvia can help you evaluate fast-install exterior systems around project execution,
+              dry workflow, repeatability, and buildability.
             </p>
           </div>
           <div class="cta-actions">
@@ -1107,11 +1205,13 @@
           <p>Buildability-focused exterior systems for modern construction.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#systems">Systems</a>
-          <a href="#applications">Applications</a>
           <a href="#buildability">Buildability</a>
+          <a href="#systems">Systems</a>
           <a href="#installation">Installation</a>
           <a href="#structure">Structure</a>
+          <a href="technical-center/">Technical Center</a>
+          <a href="#applications">Applications</a>
+          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
