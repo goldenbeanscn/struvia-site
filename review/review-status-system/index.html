@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Status System | Struvia Technical Center</title>
+    <meta name="description" content="Review status definitions and transition rules for engineering documentation pages in the Struvia Technical Center." />
+    <link rel="stylesheet" href="../../technical-center/technical-center.css" />
+  </head>
+  <body>
+    <header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../index.html"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span>Struvia<small>Buildability Systems</small></span></a><nav class="nav"><a href="../../technical-center/">Technical Center</a><a href="../">Review</a><a href="./" aria-current="page">Status</a></nav></div></header>
+    <main>
+      <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Status System</p><h1>Engineering documentation review statuses.</h1><p class="hero-copy">A controlled status vocabulary for tracking whether pages are drafted, reviewed, evidence-ready, approved, or blocked by missing engineering layers.</p></div><aside class="index-note"><strong>Status Rule</strong><p>Status should describe engineering maturity, not writing progress alone.</p></aside></div></section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-heading"><h2>Status Definitions</h2><p>Use these statuses consistently across Technical Center categories, node pages, and execution subpages.</p></div>
+          <div class="deep-node-list">
+            <article class="deep-node"><strong>draft</strong><p>Initial page exists. Structure or content may be incomplete.</p></article>
+            <article class="deep-node"><strong>architecture-reviewed</strong><p>Taxonomy, hierarchy, routing, links, role paths, and related systems are checked.</p></article>
+            <article class="deep-node"><strong>engineering-reviewed</strong><p>Execution logic, sequencing, node behavior, risk logic, and inspection workflow are checked.</p></article>
+            <article class="deep-node"><strong>evidence-reviewed</strong><p>Evidence placeholders or real visuals are mapped to the required engineering proof type.</p></article>
+            <article class="deep-node"><strong>approved</strong><p>Architecture, engineering depth, evidence readiness, and UI consistency are acceptable for publication.</p></article>
+            <article class="deep-node"><strong>needs-depth</strong><p>Page is structurally present but lacks sufficient engineering explanation or execution workflow.</p></article>
+            <article class="deep-node"><strong>needs-evidence</strong><p>Page requires real images, annotated diagrams, QC frames, project photos, or logistics visuals.</p></article>
+            <article class="deep-node"><strong>needs-risk-analysis</strong><p>Page lacks failure modes, risk paths, warning logic, or inspection checkpoints.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="wrap">
+          <div class="section-heading"><h2>Status Transition Logic</h2><p>Review status should move through engineering maturity gates rather than one-step approval.</p></div>
+          <div class="gate-grid">
+            <article class="gate"><strong>01 / Draft</strong><p>Create page structure with required sections and source alignment.</p></article>
+            <article class="gate"><strong>02 / Architecture Review</strong><p>Confirm taxonomy, internal links, role path, route, and related-system relationship.</p></article>
+            <article class="gate"><strong>03 / Engineering Review</strong><p>Check execution logic, sequence, failure risks, node behavior, and inspection workflow.</p></article>
+            <article class="gate"><strong>04 / Evidence Review</strong><p>Map evidence needs and verify diagrams, project photos, QC frames, or logistics visuals.</p></article>
+          </div>
+          <div class="analysis-strip"><strong>Approval Gate</strong><p>A page becomes approved only after architecture-reviewed, engineering-reviewed, and evidence-reviewed are complete, with no open needs-depth, needs-evidence, or needs-risk-analysis flag.</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-heading"><h2>Blocking Conditions</h2><p>These conditions prevent approval even when the page looks visually complete.</p></div>
+          <div class="failure-grid">
+            <article class="failure-card"><strong>Architecture Block</strong><p>Page is orphaned, misclassified, weakly linked, or disconnected from related systems.</p></article>
+            <article class="failure-card"><strong>Engineering Block</strong><p>Page lacks sequencing, node behavior, failure logic, or inspection checkpoints.</p></article>
+            <article class="failure-card"><strong>Evidence Block</strong><p>Page depends on claims or diagrams but has no required real evidence plan.</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><div class="wrap footer-inner"><div><strong>Struvia</strong><p>Review status control system.</p></div><nav class="footer-links"><a href="../">Review System</a><a href="../../technical-center/">Technical Center</a></nav></div></footer>
+  </body>
+</html>
