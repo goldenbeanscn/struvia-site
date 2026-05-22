@@ -240,3 +240,43 @@ Future video documentation should capture:
 * container loading pattern
 * final cleanup and door closure
 * unloading-side recommendations
+
+---
+
+# Manual Handling & Deformation Control
+
+Reference source:
+
+* uploaded handling, storage, cutting, and construction precautions document
+
+Handling interpretation:
+
+* loading logic must prevent deformation as well as packaging damage
+* long panels can sag at the center if support is not distributed
+* concentrated lifting force can create surface grooves, edge damage, or panel distortion
+
+Distributed lifting workflow:
+
+1. confirm panel length and lifting route
+2. assign workers to both ends and the center for panels longer than 3 m
+3. lift together using coordinated movement
+4. keep the panel level during transfer
+5. avoid twisting, dragging, or point-loading the panel
+6. set the panel down onto prepared supports, not directly onto uneven ground
+
+Protection priorities:
+
+* support long spans during container loading and unloading
+* avoid pressure on visible coated surfaces
+* protect interlocking edges from impact
+* keep packages dry and off wet ground
+* maintain stable support spacing during temporary staging
+
+Common loading and unloading risks:
+
+* center sag from two-person end-only lifting
+* deformation from wide pallet or timber spacing
+* coating scratches from direct contact with tools or rough surfaces
+* corner damage during container entry
+* water exposure during outdoor staging
+* unstable stacking that transfers load to panel edges

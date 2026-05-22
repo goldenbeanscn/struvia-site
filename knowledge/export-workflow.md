@@ -209,3 +209,38 @@ Future loading footage should capture:
 * long-panel support method
 * final container loading pattern
 * unloading simulation or destination guidance
+
+---
+
+# Handling & Destination Protection Logic
+
+Reference source:
+
+* uploaded handling, storage, cutting, and construction precautions document
+
+Export interpretation:
+
+* export protection must preserve panel geometry, coating surface, interlocking edges, and cut-edge condition until installation
+* long panels remain vulnerable after delivery; receiving-side handling and storage should be treated as part of export workflow guidance
+* deformation risk increases when support is concentrated at only one or two points
+
+Transportation handling logic:
+
+* panels longer than 3 m should be handled with distributed support, including both ends and the center
+* worker movement should be coordinated so the panel is not twisted or allowed to sag
+* lifting tools such as slings or lifting rods can reduce direct pressure on coated surfaces
+* surface grooves, scratches, edge impact, and center sag should be treated as preventable transport damage modes
+
+Receiving-side storage guidance:
+
+* store panels in a ventilated and dry warehouse where possible
+* use a flat, firm site for temporary storage
+* when outdoor storage is unavoidable, add moisture-proof and waterproof covering
+* use square timber or pallet support to keep panels away from standing water
+* keep support spacing close enough to prevent deformation from panel self-weight
+* avoid open-air rain exposure and soaking
+
+Export workflow implication:
+
+* shipment handoff should include handling and storage precautions, not only packing quantity
+* destination teams should understand long-panel lifting, support spacing, waterproof covering, and surface protection before unloading begins

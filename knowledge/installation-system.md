@@ -582,8 +582,57 @@ Current known and placeholder mistake areas:
 * corner trim installed without checking both wall planes
 * long-run panel rhythm not checked at intervals
 * metal frame or substrate flatness not verified before installation
+* long panels lifted without center support
+* panel surface scratched by tools during construction
+* cutting debris left on coating or cut edges
+* panel interior exposed to rainwater during construction
+* panels from different production batches mixed on the same wall without color review
 
 ---
+
+## Site Handling & Construction Protection
+
+Reference source:
+
+* uploaded handling, storage, cutting, and construction precautions document
+
+Engineering interpretation:
+
+* installation quality begins before panels reach the wall
+* handling, storage, cutting, cleaning, and weather protection all affect whether panels remain installable
+* lightweight panels still require distributed support because long lengths can sag or deform under their own weight
+* construction protection should be treated as part of the installation workflow, not as a separate afterthought
+
+Panel handling logic:
+
+* for panels longer than 3 m, use at least three workers where practical
+* distribute workers at both ends and near the center of the panel
+* coordinate lifting movement so one point does not carry excessive load
+* avoid dragging panels across rough surfaces
+* use slings, lifting rods, or suitable tools where needed to reduce direct surface pressure
+* protect interlocking edges, corners, and visible coated faces during movement
+
+Cutting and debris control:
+
+* cut with the back side facing up where practical
+* keep metal filings away from coated surfaces and cut edges
+* remove filings promptly with a soft brush or air cleaning method
+* wear protective gloves during cleaning and handling
+* do not leave cutting residue on the panel because metal debris can create corrosion risk
+
+Construction protection:
+
+* protect the panel face from scratches, tool impact, and dropped objects
+* avoid construction during rain where panel interiors or cut edges may contact water
+* prevent water from entering exposed panel interiors during installation
+* clean construction stains with water or neutral detergent
+* avoid strong acid or alkaline cleaners that may damage the coating
+* review color consistency before mixing panels from different production batches on one wall
+
+Workflow implication:
+
+* site protection should be checked at receiving, storage, cutting, installation, cleaning, and final inspection
+* deformation, scratches, corrosion, and color mismatch are site-management risks, not only product-quality issues
 
 ## FAQ
 
